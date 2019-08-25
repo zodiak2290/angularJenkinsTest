@@ -22,5 +22,10 @@ pipeline {
         }
       }
     }
+    stage('UP LOCAL') {
+      steps {
+        sh 'ng serve'
+      }
+    }
   }
 }
