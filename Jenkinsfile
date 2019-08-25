@@ -8,8 +8,18 @@ pipeline {
   }
   stages {
     stage('Restore') {
-      steps {
-        sh 'npm install'
+      parallel {
+        stage('Restore') {
+          steps {
+            sh 'npm install'
+          }
+        }
+        stage('Install NG') {
+          steps {
+            sh '''npm install -g @angular/cli
+'''
+          }
+        }
       }
     }
   }
