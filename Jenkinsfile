@@ -7,9 +7,9 @@ pipeline {
 
   }
   stages {
-    stage('Run') {
+    stage('Restore') {
       steps {
-        sh 'ng serve'
+        sh 'npm install'
       }
     }
   }
