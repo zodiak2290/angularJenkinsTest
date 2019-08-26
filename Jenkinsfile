@@ -7,9 +7,22 @@ pipeline {
 
   }
   stages {
-    stage('Install npm') {
-      steps {
-        sh 'npm install'
+    stage('INSTALANDO NPM') {
+      parallel {
+        stage('Clean npm') {
+          steps {
+            sh '''
+
+
+
+npm cache clean --force'''
+          }
+        }
+        stage('Install npm') {
+          steps {
+            sh 'npm install'
+          }
+        }
       }
     }
     stage('Install angular') {
