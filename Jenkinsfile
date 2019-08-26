@@ -7,22 +7,18 @@ pipeline {
 
   }
   stages {
-    stage('Restore') {
-      parallel {
-        stage('Restore') {
-          steps {
-            sh 'npm install'
-          }
-        }
-        stage('Install NG') {
-          steps {
-            sh '''npm install -g @angular/cli
-'''
-          }
-        }
+    stage('Install npm') {
+      steps {
+        sh 'npm install'
       }
     }
-    stage('BUIL') {
+    stage('Install angular') {
+      steps {
+        sh '''npm install -g @angular/cli
+'''
+      }
+    }
+    stage('Build') {
       steps {
         sh 'ng build'
       }
