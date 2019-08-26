@@ -22,9 +22,9 @@ pipeline {
         }
       }
     }
-    stage('UP LOCAL') {
+    stage('BUIL') {
       steps {
-        sh 'ng serve'
+        sh 'ng build'
       }
     }
   }
