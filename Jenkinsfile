@@ -38,7 +38,7 @@ npm cache clean --force'''
     }
     stage('Run') {
       steps {
-        sh 'docker run '
+        sh 'pwd'
       }
     }
   }
