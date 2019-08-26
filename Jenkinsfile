@@ -36,5 +36,10 @@ npm cache clean --force'''
         sh 'ng build'
       }
     }
+    stage('Run') {
+      steps {
+        sh 'docker run '
+      }
+    }
   }
 }
